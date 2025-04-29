@@ -59,7 +59,7 @@ services:
     environment:
       - LOG_LEVEL=info
       - HEALTH_SERVER_ADDRESS=127.0.0.1:9999
-      - TZ=America/Los_Angeles
+      - TZ=America/New_York
     restart: always
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
@@ -75,7 +75,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=America/Los_Angeles
+      - TZ=America/New_York
       - WEBUI_PORT=8080
       - TORRENTING_PORT=6881
     volumes:
@@ -97,7 +97,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=America/Los_Angeles
+      - TZ=America/New_York
       - NZBGET_USER=user
       - NZBGET_PASS=password
     volumes:
@@ -115,7 +115,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=America/Los_Angeles
+      - TZ=America/New_York
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /docker/prowlarr:/config
@@ -131,7 +131,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=America/Los_Angeles
+      - TZ=America/New_York
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /docker/sonarr:/config
@@ -149,7 +149,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=America/Los_Angeles
+      - TZ=America/New_York
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /docker/radarr:/config
@@ -171,7 +171,7 @@ services:
     environment:
      - PUID=1000
      - PGID=1000
-     - TZ=America/Los_Angeles
+     - TZ=America/New_York
     ports:
       - 8686:8686
     networks:
@@ -185,7 +185,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=America/Los_Angeles
+      - TZ=America/New_York
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /docker/bazarr:/config
@@ -226,7 +226,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=America/Los_Angeles
+      - TZ=America/New_York
       - DOCKER_MODS=linuxserver/mods:universal-cron
     volumes:
       - /docker/ytdl-sub/config:/config
