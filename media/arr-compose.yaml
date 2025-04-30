@@ -80,7 +80,7 @@ services:
       - TORRENTING_PORT=6881
     volumes:
       - /docker/qbittorrent:/config
-      - /data:/data
+      - /data:/mnt/Plex
     depends_on:
       - gluetun
     network_mode: service:gluetun
@@ -103,7 +103,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /docker/nzbget:/config
-      - /data:/data
+      - /data:/mnt/Plex
     depends_on:
       - gluetun
     restart: unless-stopped
@@ -135,7 +135,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /docker/sonarr:/config
-      - /data:/data
+      - /data:/mnt/Plex
     ports:
       - 8989:8989
     networks:
@@ -153,7 +153,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /docker/radarr:/config
-      - /data:/data
+      - /data:/mnt/Plex
     ports:
       - 7878:7878
     networks:
@@ -167,7 +167,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /docker/lidarr:/config
-      - /data:/data
+      - /data:/mnt/Plex
     environment:
      - PUID=0
      - PGID=0
@@ -189,7 +189,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /docker/bazarr:/config
-      - /data:/data
+      - /data:/mnt/Plex
     ports:
       - 6767:6767
     networks:
@@ -207,7 +207,7 @@ services:
     container_name: filebrowser
     volumes:
       - /data:/srv # Directory you want exposed to filebrowser.
-      - /docker/filebrowser/data:/data
+      - /docker/filebrowser/data:/mnt/Plex
       - /docker/filebrowser/config:/config
     environment:
       - PUID=0
